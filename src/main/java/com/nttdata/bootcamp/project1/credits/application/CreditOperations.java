@@ -4,11 +4,13 @@ import java.util.List;
 
 import com.nttdata.bootcamp.project1.credits.domain.Credit;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 public interface CreditOperations {
-    List<Credit> queryAll();
-    Credit findCreditId(int id);
-    Credit create(Credit credit);
-    Credit update(int id,Credit credit);
-    void delete(int id);
-    void publicCredit(Credit credit);
+    Flux<Credit> queryAll();
+    Mono<Credit> findCreditId(String id);
+    Mono<Credit> create(Credit credit);
+    Mono<Credit> update(String id,Mono<Credit> credit);
+    Mono <Void> delete(String id);
 }

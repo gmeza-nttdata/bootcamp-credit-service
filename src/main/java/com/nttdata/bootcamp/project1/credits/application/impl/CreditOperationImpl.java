@@ -1,7 +1,5 @@
 package com.nttdata.bootcamp.project1.credits.application.impl;
 
-import java.util.List;
-
 import com.nttdata.bootcamp.project1.credits.application.CreditOperations;
 import com.nttdata.bootcamp.project1.credits.application.model.CreditRepository;
 import com.nttdata.bootcamp.project1.credits.domain.Credit;
@@ -9,39 +7,39 @@ import com.nttdata.bootcamp.project1.credits.domain.Credit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 @Service
+@RequiredArgsConstructor
 public class CreditOperationImpl implements CreditOperations{
     @Autowired
     CreditRepository repository;
 
     @Override
-    public List<Credit> queryAll() {
+    public Flux<Credit> queryAll() {
         return repository.getAll();
     }
 
     @Override
-    public Credit findCreditId(int id) {
+    public Mono<Credit> findCreditId(String id) {
         return repository.getCreditId(id);
     }
 
     @Override
-    public Credit create(Credit credit) {
-        return null;
+    public Mono<Credit> create(Credit credit) {
+        return repository.save(credit);
     }
 
     @Override
-    public Credit update(int id, Credit credit) {
-        return null;
+    public Mono<Credit> update(String id, Mono<Credit> credit) {
+        return repository.update(credit, id);
     }
 
     @Override
-    public void delete(int id) {
-
+    public Mono<Void> delete(String id) {
+       return repository.delete(id);
     }
 
-    @Override
-    public void publicCredit(Credit credit) {
-
-    }
-    
 }

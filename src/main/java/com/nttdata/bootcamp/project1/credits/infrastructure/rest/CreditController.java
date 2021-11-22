@@ -4,6 +4,7 @@ import com.nttdata.bootcamp.project1.credits.application.CreditOperations;
 import com.nttdata.bootcamp.project1.credits.application.impl.CreditOperationImpl;
 import com.nttdata.bootcamp.project1.credits.domain.Credit;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,31 +23,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/credits")
 @RequiredArgsConstructor
 public class CreditController {
+  
     private final CreditOperations creditOperation;
 
     @GetMapping
     public Flux<Credit> get(){
-        return Flux.fromIterable(creditOperation.queryAll());
+        return creditOperation.queryAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<Credit> getCreditId(@PathVariable int id){
-        return Mono.justOrEmpty(creditOperation.findCreditId(id));
+    public Mono<Credit> getCreditId(@PathVariable String id){
+        return creditOperation.findCreditId(id);
     }
 
     @PostMapping()
     public Mono<Credit> post (@RequestBody Credit credit){
-        return Mono.justOrEmpty(creditOperation.create(credit));
+        return creditOperation.create(credit);
     }
 
-    @PutMapping()
-    public Mono<Credit> put(@PathVariable int id, @RequestBody Credit credit){
-        return Mono.justOrEmpty(creditOperation.update(id, credit));
+    @PutMapping("/{id}")
+    public Mono<Credit> put(@PathVariable String id, @RequestBody Mono<Credit> credit){
+        return creditOperation.update(id, credit);
     }
 
-    @DeleteMapping()
-    public void delete(@PathVariable int id){
-        creditOperation.delete(id);
+    @DeleteMapping("/{id}")
+    public Mono<Void> delete(@PathVariable String id){
+        return creditOperation.delete(id);
     }
     
 }

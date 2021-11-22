@@ -1,5 +1,6 @@
 package com.nttdata.bootcamp.project1.credits.infrastructure.mockRepository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,24 +10,42 @@ import com.nttdata.bootcamp.project1.credits.domain.Credit;
 
 import org.springframework.stereotype.Component;
 
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 @Component
 public class MockCreditRepository implements CreditRepository{
 
     @Override
-    public Credit getCreditId(int id) {
-        Date expDate=new Date();
-
+    public Mono<Credit> getCreditId(String id) {
         Credit credit=new Credit();
-        credit.setId(123456);
-        credit.setCardType("Personal");
-        credit.setExpirationDate(expDate);
-        return credit;
+        credit.setNumber("123456");
+        credit.setCurrencyName("PE");
+        credit.setExpiration(LocalDate.now());
+        return Mono.just(credit);
     }
 
     @Override
-    public List<Credit> getAll() {
+    public Flux<Credit> getAll() {
         List<Credit> credits=new ArrayList<>();
-        return credits;
+        return Flux.fromIterable(credits);
     }
+
+    @Override
+    public Mono<Credit> save(Credit credit) {
+        return Mono.just(credit);
+    }
+
+
+    @Override
+    public Mono<Void> delete(String id) {
+        return null;
+    }
+
+    @Override
+    public Mono<Credit> update(Mono<Credit> credit, String id) {
+        return null;
+    }
+    
     
 }
