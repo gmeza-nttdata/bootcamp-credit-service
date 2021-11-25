@@ -1,6 +1,6 @@
-package com.nttdata.bootcamp.project1.credits.infrastructure.repository;
+package com.nttdata.bootcamp.creditservice.infrastructure.repository;
 
-import com.nttdata.bootcamp.project1.credits.infrastructure.model.dao.CreditDao;
+import com.nttdata.bootcamp.creditservice.infrastructure.model.dao.CreditDao;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 

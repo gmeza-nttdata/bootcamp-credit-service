@@ -1,8 +1,8 @@
-package com.nttdata.bootcamp.project1.credits.application.impl;
+package com.nttdata.bootcamp.creditservice.application.impl;
 
-import com.nttdata.bootcamp.project1.credits.application.CreditOperations;
-import com.nttdata.bootcamp.project1.credits.application.model.CreditRepository;
-import com.nttdata.bootcamp.project1.credits.domain.Credit;
+import com.nttdata.bootcamp.creditservice.application.model.CreditRepository;
+import com.nttdata.bootcamp.creditservice.application.CreditOperations;
+import com.nttdata.bootcamp.creditservice.domain.Credit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

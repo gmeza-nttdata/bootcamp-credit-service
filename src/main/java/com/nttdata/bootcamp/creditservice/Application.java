@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project1.credits;
+package com.nttdata.bootcamp.creditservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

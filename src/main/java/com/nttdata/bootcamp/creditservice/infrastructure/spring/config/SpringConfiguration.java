@@ -1,7 +1,7 @@
-package com.nttdata.bootcamp.project1.credits.infrastructure.spring.config;
+package com.nttdata.bootcamp.creditservice.infrastructure.spring.config;
 
-import com.nttdata.bootcamp.project1.credits.application.model.CreditRepository;
-import com.nttdata.bootcamp.project1.credits.infrastructure.repository.CreditCrudRepository;
+import com.nttdata.bootcamp.creditservice.application.model.CreditRepository;
+import com.nttdata.bootcamp.creditservice.infrastructure.repository.CreditCrudRepository;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

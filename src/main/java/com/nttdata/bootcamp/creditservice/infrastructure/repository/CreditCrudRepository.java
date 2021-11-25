@@ -1,8 +1,8 @@
-package com.nttdata.bootcamp.project1.credits.infrastructure.repository;
+package com.nttdata.bootcamp.creditservice.infrastructure.repository;
 
-import com.nttdata.bootcamp.project1.credits.application.model.CreditRepository;
-import com.nttdata.bootcamp.project1.credits.domain.Credit;
-import com.nttdata.bootcamp.project1.credits.infrastructure.model.dao.CreditDao;
+import com.nttdata.bootcamp.creditservice.application.model.CreditRepository;
+import com.nttdata.bootcamp.creditservice.domain.Credit;
+import com.nttdata.bootcamp.creditservice.infrastructure.model.dao.CreditDao;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

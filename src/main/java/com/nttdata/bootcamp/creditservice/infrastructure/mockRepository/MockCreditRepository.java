@@ -1,12 +1,11 @@
-package com.nttdata.bootcamp.project1.credits.infrastructure.mockRepository;
+package com.nttdata.bootcamp.creditservice.infrastructure.mockRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import com.nttdata.bootcamp.project1.credits.application.model.CreditRepository;
-import com.nttdata.bootcamp.project1.credits.domain.Credit;
+import com.nttdata.bootcamp.creditservice.application.model.CreditRepository;
+import com.nttdata.bootcamp.creditservice.domain.Credit;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project1.credits;
+package com.nttdata.bootcamp.creditservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

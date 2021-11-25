@@ -1,8 +1,7 @@
-package com.nttdata.bootcamp.project1.credits.domain;
+package com.nttdata.bootcamp.creditservice.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
 import lombok.Data;
 

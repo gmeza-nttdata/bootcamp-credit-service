@@ -1,8 +1,6 @@
-package com.nttdata.bootcamp.project1.credits.application;
+package com.nttdata.bootcamp.creditservice.application;
 
-import java.util.List;
-
-import com.nttdata.bootcamp.project1.credits.domain.Credit;
+import com.nttdata.bootcamp.creditservice.domain.Credit;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,13 +1,10 @@
-package com.nttdata.bootcamp.project1.credits.infrastructure.model.dao;
+package com.nttdata.bootcamp.creditservice.infrastructure.model.dao;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
-import com.fasterxml.jackson.databind.annotation.JsonAppend.Prop;
-
-import com.nttdata.bootcamp.project1.credits.domain.CreditType;
-import com.nttdata.bootcamp.project1.credits.domain.Type;
+import com.nttdata.bootcamp.creditservice.domain.CreditType;
+import com.nttdata.bootcamp.creditservice.domain.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
