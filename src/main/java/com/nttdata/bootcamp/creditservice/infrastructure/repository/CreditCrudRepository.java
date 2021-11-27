@@ -27,19 +27,7 @@ public class CreditCrudRepository implements CreditRepository {
         return repository.findAll()
                 .map(this::mapCreditDaoToCredit);
     }
-    
 
-    private CreditDao mapCreditToCreditDao(Credit credit){
-        CreditDao creditDao=new CreditDao();
-        BeanUtils.copyProperties(credit, creditDao);
-        return creditDao;
-    }
-
-    private Credit mapCreditDaoToCredit(CreditDao creditDao){
-        Credit credit=new Credit();
-        BeanUtils.copyProperties(creditDao, credit);
-        return credit;
-    }
     @Override
     public Mono<Credit> save(Credit credit) {
         return repository.save(mapCreditToCreditDao(credit))
@@ -53,9 +41,6 @@ public class CreditCrudRepository implements CreditRepository {
                 .doOnNext(i->i.setNumber(id)))
                 .flatMap(repository::save)
                 .map(this::mapCreditDaoToCredit);
-
-        /*return repository.update(mapCreditToCreditDao(credit))
-                .map(this::mapCreditDaoToCredit);*/
     }
 
     @Override
@@ -63,5 +48,16 @@ public class CreditCrudRepository implements CreditRepository {
         return repository.deleteById(id);
     }
 
+    private CreditDao mapCreditToCreditDao(Credit credit){
+        CreditDao creditDao=new CreditDao();
+        BeanUtils.copyProperties(credit, creditDao);
+        return creditDao;
+    }
+
+    private Credit mapCreditDaoToCredit(CreditDao creditDao){
+        Credit credit=new Credit();
+        BeanUtils.copyProperties(creditDao, credit);
+        return credit;
+    }
 
 }

@@ -23,7 +23,7 @@ public class CreditOperationImpl implements CreditOperations{
     }
 
     @Override
-    public Mono<Credit> findCreditId(String id) {
+    public Mono<Credit> findById(String id) {
         return repository.getCreditId(id);
     }
 
