@@ -44,9 +44,9 @@ public class CreditController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<Credit>> post (@RequestBody Credit credit){
-        return operations.findById(credit.getNumber())
-                .switchIfEmpty(Mono.just(credit)
-                        .flatMap(operations::create))
+        return Mono.just(credit)
+                .doOnNext(e -> e.setNumber(null))
+                .flatMap(operations::create)
                 .map(this::postResponse);
     }
 
