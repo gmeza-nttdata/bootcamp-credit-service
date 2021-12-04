@@ -20,7 +20,6 @@ public class MockCreditRepository implements CreditRepository{
         Credit credit=new Credit();
         credit.setNumber("123456");
         credit.setCurrencyName("PE");
-        credit.setExpiration(LocalDate.now());
         return Mono.just(credit);
     }
 
